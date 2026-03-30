@@ -1,10 +1,12 @@
-# Nhập 3 chuỗi
-chuoi1 = input("Nhập chuỗi 1: ")
-chuoi2 = input("Nhập chuỗi 2: ")
-chuoi3 = input("Nhập chuỗi 3: ")
+# Nhập số nguyên dương
+n = int(input("Nhập số nguyên dương: "))
 
-# Ghép chuỗi
-ket_qua = chuoi1 + " " + chuoi2 + " " + chuoi3
-
-# In kết quả
-print("Chuỗi sau khi ghép là:", ket_qua)
+# Kiểm tra
+if n % 2 == 0 and n % 3 == 0:
+    print("Số chia hết cho cả 2 và 3")
+elif n % 2 == 0:
+    print("Số chia hết cho 2")
+elif n % 3 == 0:
+    print("Số chia hết cho 3")
+else:
+    print("Số không chia hết cho 2 và 3")

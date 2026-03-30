@@ -1,12 +1,35 @@
-# Nhập bán kính
-R = float(input("Nhập bán kính: "))
+import math
 
-pi = 3.14
+# Nhập hệ số
+a = float(input("Nhập a: "))
+b = float(input("Nhập b: "))
+c = float(input("Nhập c: "))
 
-# Tính toán
-chu_vi = 2 * pi * R
-dien_tich = pi * R * R
+# Trường hợp đặc biệt a = 0 (phương trình bậc 1)
+if a == 0:
+    if b == 0:
+        if c == 0:
+            print("Phương trình vô số nghiệm")
+        else:
+            print("Phương trình vô nghiệm")
+    else:
+        x = -c / b
+        print("Phương trình bậc 1, nghiệm x =", x)
 
-# In kết quả
-print("Chu vi hình tròn:", chu_vi)
-print("Diện tích hình tròn:", dien_tich)
+else:
+    # Tính delta
+    delta = b**2 - 4*a*c
+
+    if delta > 0:
+        x1 = (-b + math.sqrt(delta)) / (2*a)
+        x2 = (-b - math.sqrt(delta)) / (2*a)
+        print("Phương trình có 2 nghiệm phân biệt:")
+        print("x1 =", x1)
+        print("x2 =", x2)
+
+    elif delta == 0:
+        x = -b / (2*a)
+        print("Phương trình có nghiệm kép x =", x)
+
+    else:
+        print("Phương trình vô nghiệm (trong tập số thực)")
